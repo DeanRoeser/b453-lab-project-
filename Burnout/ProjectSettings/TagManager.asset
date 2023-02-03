@@ -8,6 +8,7 @@ TagManager:
   - ground
   - wall
   - enemy
+  - Refill
   layers:
   - Default
   - TransparentFX

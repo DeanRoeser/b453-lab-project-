@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
            if (gameEnd == false)
            {
                gameEnd = true;
-               Debug.Log("GAME OVE\n" + "Press 'q' to restart");
+               Debug.Log("GAME OVER\n" + "Press 'q' to restart");
                 
                 //if (Input.GetKey("q"))
                 //{

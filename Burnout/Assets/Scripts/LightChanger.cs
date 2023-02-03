@@ -12,6 +12,9 @@ public class LightChanger : MonoBehaviour
     public float lowLight;
     private float val;
     public float smoothTime;
+    private int frames = 0;
+    public GameManager gm;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +23,17 @@ public class LightChanger : MonoBehaviour
         originalRange = scale.range;
     }
 
+
+
+
     // Update is called once per frame
     void Update()
     {
+        frames++;
+        if (frames %5 == 0){
+            Burnout();
+        }
+
         if(Input.GetKey("w"))
         {
             TurnUp();
@@ -36,6 +47,20 @@ public class LightChanger : MonoBehaviour
             scale.range = Mathf.SmoothDamp(scale.range, originalRange, ref val, smoothTime);
         }
     }
+
+    public void LightReset(){
+        scale.intensity = 100;
+    }
+
+    void Burnout(){
+        scale.intensity = scale.intensity - 1;
+
+        if(scale.intensity == 0){
+            gm.EndGame();
+        }
+
+    }
+
 
     void TurnUp()
     {
