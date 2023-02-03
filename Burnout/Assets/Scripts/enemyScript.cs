@@ -29,6 +29,8 @@ public class enemyScript : MonoBehaviour
     {
         //distance to player
         float distToPlayer =Vector2.Distance(transform.position, player.position);
+        rb.gravityScale = 8;
+
         
         if(distToPlayer < agroRange)
         {
@@ -55,7 +57,7 @@ public class enemyScript : MonoBehaviour
         Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0.5f, groundLayers);
         if (groundCheck != null)
         {
-            rb.gravityScale = 1;
+            rb.gravityScale = 8;
             return true;
         }
 

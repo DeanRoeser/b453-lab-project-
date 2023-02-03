@@ -27,7 +27,7 @@ public class playerMovement : MonoBehaviour
         {
             rb.gravityScale = Mathf.SmoothDamp(rb.gravityScale, grav, ref val, smoothTime);
         }
-        if(Input.GetButtonUp("Jump") && !IsGrounded())
+        if(!Input.GetButton("Jump") && !IsGrounded())
         {
             Drop();
         }
@@ -38,6 +38,7 @@ public class playerMovement : MonoBehaviour
         else
         {
             john.SetBool("Walking", false);
+            
         }
     }
 
