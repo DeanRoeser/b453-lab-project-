@@ -30,7 +30,7 @@ public class LightChanger : MonoBehaviour
     void Update()
     {
         frames++;
-        if (frames %5 == 0){
+        if (frames %7 == 0){
             Burnout();
         }
 
