@@ -14,6 +14,7 @@ public class LightChanger : MonoBehaviour
     public float smoothTime;
     private int frames = 0;
     public GameManager gm;
+    [SerializeField] public int burnoutRate = 7;
 
 
     // Start is called before the first frame update
@@ -27,10 +28,10 @@ public class LightChanger : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         frames++;
-        if (frames %7 == 0){
+        if (frames % burnoutRate == 0){
             Burnout();
         }
 
